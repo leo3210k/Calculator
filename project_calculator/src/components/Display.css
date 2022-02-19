@@ -1,0 +1,8 @@
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-column: span 4;
+
+    padding: 2vh 2vw;
+}

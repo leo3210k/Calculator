@@ -1,0 +1,45 @@
+{
+  "name": "project_calculator",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "main": "./public/electron.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron:start": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electronmon .\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+       "last 1 electron version"
+    ],
+    "development": [
+       "last 1 electron version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13",
+    "electronmon": "^2.0.2",
+    "wait-on": "^6.0.1"
+  }
+}
