@@ -1,11 +1,15 @@
+:root {
+    --black-squeeze: #eff4f9;
+}
+
 .calculator {
     width: 98.5vw;
     height: 99vh;
     margin: 0.5vw 0.5vh;
 
     display: grid;
-    grid-template-rows: 1fr 20vw 20vw 20vw 20vw 20vw;
-    grid-template-columns: 1fr 16.25vh 16.25vh 16.25vh;
+    grid-template-rows: 1fr 16.5vw 16.5vw 16.5vw 16.5vw 16.5vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    background-color: red;
+    background-color: var(--black-squeeze);
 }

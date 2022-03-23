@@ -5,16 +5,29 @@ import Display from '../components/Display';
 import Button from '../components/Button';
 
 const initialState = {
-    values: [],
-    display: 1,
+    values: [0, 0],
+    display: '0',
     operation: '',
+    current: 0
 }
 
 export default class Calculator extends Component {
     state = { ...initialState }
 
-    teste() {
-        console.log('teste')
+    constructor(props) {
+        super(props)
+
+        this.updateDisplay = this.updateDisplay.bind(this)
+    }
+
+    updateDisplay(element) {
+        const number = element.target.innerHTML
+
+        this.setState({ display: this.state.display + number })
+    }
+
+    setOperation(operation) {
+
     }
     
     render() {
@@ -22,25 +35,25 @@ export default class Calculator extends Component {
             <div class="calculator">
                 <Display display={this.state.display}/>
                 <Button value=""/>
-                <Button value={this.state.display}/>
+                <Button value="alo"/>
                 <Button click={this.teste} value="Aqui"/>
-                <Button value="/"/>
-                <Button value="7"/>
-                <Button value="8"/>
-                <Button value="9"/>
-                <Button value="*"/>
-                <Button value="4"/>
-                <Button value="5"/>
-                <Button value="6"/>
-                <Button value="-"/>
-                <Button value="1"/>
-                <Button value="2"/>
-                <Button value="3"/>
-                <Button value="+"/>
-                <Button value="+"/>
-                <Button value="0"/>
-                <Button value=","/>
-                <Button value="="/>
+                <Button value="/" click={this.setOperation}/>
+                <Button value="7" click={this.updateDisplay}/>
+                <Button value="8" click={this.updateDisplay}/>
+                <Button value="9" click={this.updateDisplay}/>
+                <Button value="X" click={this.setOperation}/>
+                <Button value="4" click={this.updateDisplay}/>
+                <Button value="5" click={this.updateDisplay}/>
+                <Button value="6" click={this.updateDisplay}/>
+                <Button value="-" click={this.setOperation}/>
+                <Button value="1" click={this.updateDisplay}/>
+                <Button value="2" click={this.updateDisplay}/>
+                <Button value="3" click={this.updateDisplay}/>
+                <Button value="+" click={this.setOperation}/>
+                <Button value="+" click={this.updateDisplay}/>
+                <Button value="0" click={this.updateDisplay}/>
+                <Button value="," click={this.updateDisplay}/>
+                <Button value="=" blue click={this.setOperation}/>
             </div>
         )
     }
