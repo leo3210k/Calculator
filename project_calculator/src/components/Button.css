@@ -1,6 +1,20 @@
+:root {
+    --white-lilac: #f7f9fc;
+    --science-blue: #0067c0;
+    --white: #fff;
+}
+
 .button {
-    margin: 0.2vw 0.2vh;
+    margin: 0.5vw 0.5vh;
     border: none;
+    border-radius: 1vw;
+    background: var(--white-lilac);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.button-blue {
+    color: var(--white);
+    background-color: var(--science-blue);
 }
 
 .button:hover {
