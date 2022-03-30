@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import './Calculator.css';
 
 import Display from '../components/Display';
@@ -20,10 +22,19 @@ export default class Calculator extends Component {
         this.updateDisplay = this.updateDisplay.bind(this)
     }
 
+    clearDisplay() {
+        console.log('teste')
+    }
+
     updateDisplay(element) {
         const number = element.target.innerHTML
 
-        this.setState({ display: this.state.display + number })
+        // if(this.state.display == '0') this.clearDisplay
+        if(this.state.display == '0') {
+            this.setState({ display: number }) 
+        } else {
+            this.setState({ display: this.state.display + number })
+        }
     }
 
     setOperation(operation) {
@@ -34,9 +45,13 @@ export default class Calculator extends Component {
         return(
             <div class="calculator">
                 <Display display={this.state.display}/>
-                <Button value=""/>
-                <Button value="alo"/>
-                <Button click={this.teste} value="Aqui"/>
+                <Button value="%" click={this.updateDisplay}/>
+                <Button value="CE" click={this.updateDisplay}/>
+                <Button value="C" click={this.updateDisplay}/>
+                <Button value={<FontAwesomeIcon icon="fa-solid fa-delete-left" />} click={this.updateDisplay}/>
+                <Button value="1/x" font_operation/>
+                <Button value="x²" font_operation/>
+                <Button value="²√x" click={this.clearDisplay}/>
                 <Button value="/" click={this.setOperation}/>
                 <Button value="7" click={this.updateDisplay}/>
                 <Button value="8" click={this.updateDisplay}/>
@@ -53,7 +68,7 @@ export default class Calculator extends Component {
                 <Button value="+" click={this.updateDisplay}/>
                 <Button value="0" click={this.updateDisplay}/>
                 <Button value="," click={this.updateDisplay}/>
-                <Button value="=" blue click={this.setOperation}/>
+                <Button value="=" click={this.setOperation} blue/>
             </div>
         )
     }
