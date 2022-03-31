@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'GreatVibes';
-    src: url('../fonts/GreatVibes-Regular.ttf');
-}
-
 :root {
     --white-lilac: #f7f9fc;
     --science-blue: #0067c0;
@@ -26,7 +21,7 @@
     background-color: darkgray;
 }
 
-.span {
+/*.span {
     font-size: 1.5rem;
     font-family: 'GreatVibes', cursive;
-}
+}*/
